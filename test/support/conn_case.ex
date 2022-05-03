@@ -17,6 +17,8 @@ defmodule MyFoodWeb.ConnCase do
 
   use ExUnit.CaseTemplate
 
+  alias Ecto.Adapters.SQL.Sandbox
+
   using do
     quote do
       # Import conveniences for testing with connections
@@ -32,10 +34,10 @@ defmodule MyFoodWeb.ConnCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(MyFood.Repo)
+    :ok = Sandbox.checkout(MyFood.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(MyFood.Repo, {:shared, self()})
+      Sandbox.mode(MyFood.Repo, {:shared, self()})
     end
 
     {:ok, conn: Phoenix.ConnTest.build_conn()}

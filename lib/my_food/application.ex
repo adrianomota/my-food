@@ -14,7 +14,7 @@ defmodule MyFood.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: MyFood.PubSub},
       # Start the Endpoint (http/https)
-      MyFoodWeb.Endpoint,
+      MyFoodWeb.Endpoint
       # Start a worker by calling: MyFood.Worker.start_link(arg)
       # {MyFood.Worker, arg}
     ]

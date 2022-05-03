@@ -16,6 +16,8 @@ defmodule MyFood.DataCase do
 
   use ExUnit.CaseTemplate
 
+  alias Ecto.Adapters.SQL.Sandbox
+
   using do
     quote do
       alias MyFood.Repo
@@ -28,10 +30,10 @@ defmodule MyFood.DataCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(MyFood.Repo)
+    :ok = Sandbox.checkout(MyFood.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(MyFood.Repo, {:shared, self()})
+      Sandbox.mode(MyFood.Repo, {:shared, self()})
     end
 
     :ok
