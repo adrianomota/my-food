@@ -24,7 +24,7 @@ defmodule MyFood.MixProject do
         extras: ["readme.md", "CHANGELOG.md"]
       ],
       elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: [:gettext] ++ Mix.compilers(),
+      compilers: Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps(),
@@ -81,7 +81,7 @@ defmodule MyFood.MixProject do
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
       {:excoveralls, "~> 0.14.4"},
-      {:sobelow, "~> 0.8", only: :dev},
+      {:sobelow, "~> 0.11.1", only: :dev},
       {:live_ui_kit, "~> 0.1.7"},
       {:ecto_psql_extras, "~> 0.7"}
     ]

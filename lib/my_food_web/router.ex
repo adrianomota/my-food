@@ -17,7 +17,7 @@ defmodule MyFoodWeb.Router do
   scope "/", MyFoodWeb do
     pipe_through :browser
 
-    live "/", PageLive, :index
+    live "/", MainLive, :index
   end
 
   # Other scopes may use custom stacks.
