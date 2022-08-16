@@ -8,7 +8,7 @@ defmodule MyFood.MixProject do
       app: :my_food,
       version: "0.1.0",
       elixir: "~> 1.13",
-      description: "Projeto Blog",
+      description: "My food project.",
       source_utl: @github_url,
       homepage_url: @github_url,
       files: ~w(mix.exs lib LICENSE.md README.md CHANGELOG.md),
