@@ -1,0 +1,29 @@
+<div class="overflow-x-auto" data-role="product-section">
+  <table class="table w-full" data-role="product-table">
+    <!-- head -->
+    <thead>
+      <tr>
+        <th data-id="head-name">Name</th>
+        <th data-id="head-price" class="text-center">`Price`</th>
+        <th data-id="head-size" class="text-center">Size</th>
+        <th data-id="head-actions" class="text-center">Actions</th>
+      </tr>
+    </thead>
+    <tbody data-role="product-list">
+      <!-- row 1 -->
+      <%= for product <- @products do %>
+      <tr>
+        <td><%= product.name %></td>
+        <td class="text-center">$ <%= product.price %></td>
+        <td class="text-center"><%= product.size %></td>
+        <th class="flex items-center justify-center">
+          <button class="btn btn-ghost btn-xs">new</button>
+          <button class="btn btn-ghost btn-xs">details</button>
+          <button class="btn btn-ghost btn-xs">remove</button>
+        </th>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+

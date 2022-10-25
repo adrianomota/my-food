@@ -1,5 +1,6 @@
 defmodule MyFoodWeb.Router do
-  use MyFoodWeb, :router
+  use Phoenix.Router
+  import Phoenix.LiveView.Router
 
   pipeline :browser do
     plug :accepts, ["html"]
@@ -18,6 +19,10 @@ defmodule MyFoodWeb.Router do
     pipe_through :browser
 
     live "/", MainLive, :index
+
+    scope "/admin", Admin, as: :admin do
+      live "/products", ProductLive, :index
+    end
   end
 
   # Other scopes may use custom stacks.
@@ -32,7 +37,7 @@ defmodule MyFoodWeb.Router do
   # If your application does not have an admins-only section yet,
   # you can use Plug.BasicAuth to set up some basic authentication
   # as long as you are also using SSL (which you should anyway).
-  if Application.get_env(:my_food, :env) in [:dev, :test] do
+  if Application.compile_env(:my_food, :env) in [:dev, :test] do
     import Phoenix.LiveDashboard.Router
 
     scope "/" do
