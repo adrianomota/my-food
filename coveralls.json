@@ -1,7 +1,7 @@
 {
     "skip_files": [
+        "lib/release.ex",
         "lib/my_food/application.ex",
-        "lib/my_food/release.ex",
         "lib/my_food_web.ex",
         "lib/my_food_web/channels/user_socket.ex",
         "lib/my_food/mailer.ex",
@@ -12,9 +12,7 @@
         "lib/my_food_web/router.ex",
         "lib/my_food_web/gettext.ex",
         "lib/my_food_web/endpoint.ex",
-        "test/support/channel_case.ex",
-        "test/support/conn_case.ex",
-        "test/support/data_case.ex"
+        "test/support/*"
     ],
 
     "coverage_options": {

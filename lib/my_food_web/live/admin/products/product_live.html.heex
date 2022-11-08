@@ -12,18 +12,17 @@
     <tbody data-role="product-list">
       <!-- row 1 -->
       <%= for product <- @products do %>
-      <tr>
-        <td><%= product.name %></td>
-        <td class="text-center">$ <%= product.price %></td>
-        <td class="text-center"><%= product.size %></td>
+      <tr data-role="product-item" data-id={product.id}>
+        <td data-role="product-name" data-id={product.id}><%= product.name %></td>
+        <td data-role="product-price" data-id={product.id} class="text-center">$ <%= product.price %></td>
+        <td data-role="product-size" data-id={product.id} class="text-center"><%= product.size %></td>
         <th class="flex items-center justify-center">
-          <button class="btn btn-ghost btn-xs">new</button>
-          <button class="btn btn-ghost btn-xs">details</button>
-          <button class="btn btn-ghost btn-xs">remove</button>
+          <button data-role="product-action" data-id={product.id} class="btn btn-ghost btn-xs">new</button>
+          <button data-role="product-action" data-id={product.id} class="btn btn-ghost btn-xs">details</button>
+          <button data-role="product-action" data-id={product.id} class="btn btn-ghost btn-xs">remove</button>
         </th>
       </tr>
       <% end %>
     </tbody>
-  </table>
+  </table>1
 </div>
-
