@@ -1,4 +1,4 @@
-<div class="overflow-x-auto" data-role="product-section">
+<div class="overflow-x-auto static" data-role="product-section">
   <table class="table w-full" data-role="product-table">
     <!-- head -->
     <thead>
@@ -10,8 +10,7 @@
       </tr>
     </thead>
     <tbody data-role="product-list">
-      <!-- row 1 -->
-      <%= for product <- @products do %>
+      <%= for product <- @products.list do %>
       <tr data-role="product-item" data-id={product.id}>
         <td data-role="product-name" data-id={product.id}><%= product.name %></td>
         <td data-role="product-price" data-id={product.id} class="text-center">$ <%= product.price %></td>
@@ -24,5 +23,5 @@
       </tr>
       <% end %>
     </tbody>
-  </table>1
+  </table>
 </div>

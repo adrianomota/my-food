@@ -1,10 +1,17 @@
 defmodule MyFood.Factory do
   use ExMachina.Ecto, repo: MyFood.Repo
 
-  alias MyFood.Products.Product
+  def map_product_factory do
+    %{
+      name: Faker.Food.dish(),
+      description: Faker.Food.description(),
+      price: 200,
+      size: "small"
+    }
+  end
 
   def product_factory do
-    %Product{
+    %MyFood.Product{
       name: Faker.Food.dish(),
       description: Faker.Food.description(),
       price: 200,
