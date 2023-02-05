@@ -1,12 +1,8 @@
 defmodule MyFood.Products do
-  alias MyFood.Products.Product
-  alias MyFood.Repo
+  alias MyFood.Product.{Create, Delete, Paginate, Update}
 
-  def list_products, do: Repo.all(Product)
-
-  def create_product(attrs \\ %{}) do
-    attrs
-    |> Product.changeset()
-    |> Repo.insert()
-  end
+  defdelegate create_product(params), to: Create, as: :call
+  defdelegate paginate_product(params), to: Paginate, as: :call
+  defdelegate update_product(params), to: Update, as: :call
+  defdelegate delete_product(id), to: Delete, as: :call
 end
