@@ -1,4 +1,4 @@
-defmodule MyFood.Products.Product do
+defmodule MyFood.Product do
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -17,7 +17,12 @@ defmodule MyFood.Products.Product do
     timestamps()
   end
 
-  def changeset(attrs) do
+  def build(params) do
+    params
+    |> changeset()
+  end
+
+  def changeset(attrs \\ %{}) do
     changeset(%__MODULE__{}, attrs)
   end
 
