@@ -1,7 +1,7 @@
 defmodule MyFood.MixProject do
   use Mix.Project
 
-  @github_url ""
+  @github_url "git@github.com:adrianomota/my-food.git"
 
   def project do
     [
