@@ -86,6 +86,7 @@ section.login a:hover{
   transition: opacity 1s ease-out;
 }
 
+
 .phx-disconnected{
   cursor: wait;
 }
@@ -161,4 +162,8 @@ section.login a:hover{
   color: #a94442;
   display: block;
   margin: -1rem 0 2rem;
+}
+
+.table th:first-child {
+ position: static;
 }
