@@ -81,7 +81,7 @@ defmodule MyFood.MixProject do
 
       {:credo, "~> 1.6", only: [:dev, :test], runtime: false},
       {:dialyxir, "~> 1.2", only: [:dev], runtime: false},
-      {:excoveralls, "~> 0.15.0"},
+      {:excoveralls, "~> 0.16.0"},
       {:sobelow, "~> 0.11.1", only: :dev},
       {:live_ui_kit, "~> 0.2.0"},
       {:ecto_psql_extras, "~> 0.7.4"},
